@@ -1,0 +1,11 @@
+{
+  "name": "fundacion-patitas-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mikehathsin/fundacion-patitas-server.git",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  }
+}
