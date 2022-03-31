@@ -14,12 +14,3 @@ module.exports = {
   Rescuer,
 };
 
-
-
-
-const typeRescuerSchema = Schema({
-  _id: Schema.Types.ObjectId,
-  description: String,
-});
-
-
