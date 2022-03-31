@@ -1,5 +1,4 @@
 const { DBService } = require("../services/db-service");
-
 const Schema = DBService.getSchema();
 const schema = {
   animal: [{ type: Schema.Types.ObjectId, ref: "Animal" }],
