@@ -1,9 +1,9 @@
 const express = require('express');
-const adopterRouter = require('./adopter-router')
-const clinicHistoryRouter = require('./clinicHistory-router')
-const animalRouter = require('./animal-router')
-const supervisorRouter = require('./supervisor-router')
-const workerRouter = require('./worker-router')
+const adopterRouter = require('./adopter-route')
+const clinicHistoryRouter = require('./clinicHistory-route')
+const animalRouter = require('./animal-route')
+const supervisorRouter = require('./supervisor-route')
+const workerRouter = require('./worker-route')
 
 function routerApi(app){
 

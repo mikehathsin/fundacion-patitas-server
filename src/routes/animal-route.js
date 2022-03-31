@@ -4,7 +4,7 @@ const { AnimalService } = require("../services/animal-service");
 
 const router = express.Router();
 
-app.post("/animal", async (req, res) => {
+router.post("/animal", async (req, res) => {
   try {
     const response = await AnimalService.create(req.body);
     res.status(200).send(response);
@@ -12,7 +12,7 @@ app.post("/animal", async (req, res) => {
     res.status(400).send({ message: error.message });
   }
 });
-app.get("/animal", async (req, res) => {
+router.get("/animal", async (req, res) => {
   try {
     const response = await AnimalService.read();
     res.status(200).send(response);
@@ -20,7 +20,7 @@ app.get("/animal", async (req, res) => {
     res.status(400).send({ message: error.message });
   }
 });
-app.put("/animal", async (req, res) => {
+router.put("/animal", async (req, res) => {
   try {
     const response = await AnimalService.update(req.body);
     res.status(200).send(response);
@@ -28,7 +28,7 @@ app.put("/animal", async (req, res) => {
     res.status(400).send({ message: error.message });
   }
 });
-app.delete("/animal", async (req, res) => {
+router.delete("/animal", async (req, res) => {
   try {
     const response = await AnimalService.delete(req.body);
     res.status(200).send(response);
