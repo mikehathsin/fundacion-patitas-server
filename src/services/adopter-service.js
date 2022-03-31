@@ -6,27 +6,27 @@ class AdopterService {
       throw new Error("the 'name' field is required");
     }
 
-    const animal = new Animal({ name });
-    const response = await animal.save();
+    const adopter = new Adopter({ name });
+    const response = await adopter.save();
     return response;
   }
 
   static async read() {
-    const response = await Animal.find();
+    const response = await Adopter.find();
     return response;
   }
 
   static async update({ _id, ...data }) {
     const filter = { _id };
 
-    await Animal.findOneAndUpdate(filter, data);
-    const response = await Animal.findOne(filter);
+    await Adopter.findOneAndUpdate(filter, data);
+    const response = await Adopter.findOne(filter);
     return response;
   }
 
   static async delete({ _id }) {
     const filter = { _id };
-    const response = await Animal.deleteOne(filter);
+    const response = await Adopter.deleteOne(filter);
     return response;
   }
 }
