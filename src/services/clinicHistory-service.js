@@ -1,12 +1,12 @@
 const { ClinicHistory } = require("../models/clinicHistory-model");
 
 class ClinicHistoryService {
-  static async create({ name, ...data }) {
-    if (!name) {
-      throw new Error("the 'name' field is required");
+  static async create({ initial_status, ...data }) {
+    if (!initial_status) {
+      throw new Error("the 'initial_status' field is required");
     }
 
-    const clinicHistory = new ClinicHistory({ name, ...data });
+    const clinicHistory = new ClinicHistory({ initial_status, ...data });
     const response = await clinicHistory.save();
     return response;
   }

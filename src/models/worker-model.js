@@ -5,8 +5,8 @@ const schema = {
   name: String,
   phone: String,
   email: String,
-  enum:['Cuidador/a','Entrenador/a','Veterinario/a','Personal Administrativo'],
-  schedule: String, //horario
+  type:['Cuidador/a','Entrenador/a','Veterinario/a','Personal Administrativo'],
+  schedule: ['Matutino','Vespertino'], //horario
 };
 const Worker = DBService.createModel("Worker", schema);
 
