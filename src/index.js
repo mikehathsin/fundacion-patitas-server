@@ -1,18 +1,51 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const app = express();
+const { DBService } = require("./services/db-service");
+const { AnimalService } = require("./services/animal-service");
+
 const port = 3001;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+const main = async () => {
+  await DBService.connect();
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+  const app = express();
+  app.use(express.json());
 
-main().catch((err) => console.log(err));
+  app.post("/animal", async (req, res) => {
+    try {
+      const response = await AnimalService.create(req.body);
+      res.status(200).send(response);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
+  app.get("/animal", async (req, res) => {
+    try {
+      const response = await AnimalService.read();
+      res.status(200).send(response);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
+  app.put("/animal", async (req, res) => {
+    try {
+      const response = await AnimalService.update(req.body);
+      res.status(200).send(response);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
+  app.delete("/animal", async (req, res) => {
+    try {
+      const response = await AnimalService.delete(req.body);
+      res.status(200).send(response);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  });
 
-async function main() {
-  await mongoose.connect("mongodb://localhost:27017/test");
-}
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
+};
+
+main();
