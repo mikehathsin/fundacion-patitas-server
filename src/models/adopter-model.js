@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { DBService } = require("../services/db-service");
+const Schema = DBService.getSchema();
 
 const adopterSchema = Schema({
   _id: Schema.Types.ObjectId,
@@ -11,3 +11,6 @@ const adopterSchema = Schema({
   address: String,
 });
 
+module.exports = {
+  Adopter: adopterSchema,
+};
