@@ -4,7 +4,7 @@ const schema = {
   name: String,
   phone: String,
   email: String,
-  schedule: String, //horario
+  schedule: ['Matutino','Vespertino'], //horario
 };
 
 const Supervisor = DBService.createModel("Supervisor", schema);

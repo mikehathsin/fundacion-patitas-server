@@ -4,7 +4,7 @@ const schema = {
   name: String,
   phone: String,
   email: String,
-  type: [{ type: Schema.Types.ObjectId, ref: "TypeRescuer" }],
+  type:['Persona','Fundacion','Asociacion'] 
 };
 const Rescuer = DBService.createModel("Rescuer", schema);
 

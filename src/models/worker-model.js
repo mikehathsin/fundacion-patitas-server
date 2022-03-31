@@ -5,7 +5,7 @@ const schema = {
   name: String,
   phone: String,
   email: String,
-  type: [{ type: Schema.Types.ObjectId, ref: "TypeWorker" }],
+  enum:['Cuidador/a','Entrenador/a','Veterinario/a','Personal Administrativo'],
   schedule: String, //horario
 };
 const Worker = DBService.createModel("Worker", schema);
