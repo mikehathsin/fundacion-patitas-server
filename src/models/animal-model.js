@@ -1,7 +1,6 @@
 const { DBService } = require("../services/db-service");
-const Schema= DBService.getSchema();
+const Schema = DBService.getSchema();
 const schema = {
-  _id: Schema.Types.ObjectId,
   rescuer: [{ type: Schema.Types.ObjectId, ref: "Rescuer" }],
   history: [{ type: Schema.Types.ObjectId, ref: "ClinicHistory" }],
   adopter: [{ type: Schema.Types.ObjectId, ref: "Adopter" }],
