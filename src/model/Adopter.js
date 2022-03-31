@@ -11,11 +11,3 @@ const adopterSchema = Schema({
   address: String,
 });
 
-const supervisorSchema = Schema({
-  _id: Schema.Types.ObjectId,
-  name: String,
-  phone: String,
-  email: String,
-  schedule: String, //horario
-  
-});

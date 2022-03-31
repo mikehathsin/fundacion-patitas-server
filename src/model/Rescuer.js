@@ -14,3 +14,4 @@ const typeRescuerSchema = Schema({
   description: String,
   // stories: [{ type: Schema.Types.ObjectId, ref: "Animal" }],
 });
+
