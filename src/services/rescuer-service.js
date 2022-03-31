@@ -1,12 +1,12 @@
 const { Rescuer } = require("../models/rescuer-model");
 
 class RescuerService {
-  static async create({ name }) {
+  static async create({ name, ...data }) {
     if (!name) {
       throw new Error("the 'name' field is required");
     }
 
-    const rescuer = new Rescuer({ name });
+    const rescuer = new Rescuer({ name, ...data });
     const response = await rescuer.save();
     return response;
   }

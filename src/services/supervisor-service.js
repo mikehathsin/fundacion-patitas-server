@@ -1,12 +1,12 @@
 const { Supervisor } = require("../models/supervisor-model");
 
 class SupervisorService {
-  static async create({ name }) {
+  static async create({ name, ...data }) {
     if (!name) {
       throw new Error("the 'name' field is required");
     }
 
-    const supervisor = new Supervisor({ name });
+    const supervisor = new Supervisor({ name, ...data });
     const response = await supervisor.save();
     return response;
   }

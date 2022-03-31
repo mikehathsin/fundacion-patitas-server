@@ -1,12 +1,12 @@
 const { Adopter } = require("../models/adopter-model");
 
 class AdopterService {
-  static async create({ name }) {
+  static async create({ name, ...data }) {
     if (!name) {
       throw new Error("the 'name' field is required");
     }
 
-    const adopter = new Adopter({ name });
+    const adopter = new Adopter({ name, ...data });
     const response = await adopter.save();
     return response;
   }

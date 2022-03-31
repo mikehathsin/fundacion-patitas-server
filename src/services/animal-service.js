@@ -1,12 +1,12 @@
 const { Animal } = require("../models/animal-model");
 
 class AnimalService {
-  static async create({ name }) {
+  static async create({ name, ...data }) {
     if (!name) {
       throw new Error("the 'name' field is required");
     }
 
-    const animal = new Animal({ name });
+    const animal = new Animal({ name, ...data });
     const response = await animal.save();
     return response;
   }
