@@ -8,6 +8,9 @@ class DBService {
   static createModel(name, schema) {
     return mongoose.model(name, schema);
   }
+  static getSchema(){
+    return mongoose.Schema;
+  }
 }
 
 module.exports = {
